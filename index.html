@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/styles.css?v=8">
 </head>
 <body class="splash-active">
 
@@ -105,11 +105,11 @@
       <a href="#kits" data-close>Kits &amp; Anchetas</a>
       <a href="#catalogo" data-close>Productos</a>
       <a href="#categorias" data-close>Categorías</a>
-      <a href="#" data-close class="js-open-drawer">Mi selección</a>
+      <a href="#" data-close class="js-open-drawer">Cotizar</a>
     </nav>
 
     <div class="navbar-actions">
-      <button class="cart-chip js-open-drawer" type="button" aria-label="Ver mi selección">
+      <button class="cart-chip js-open-drawer" type="button" aria-label="Cotizar">
         <span class="cart-chip-icon">🎁</span>
         <span id="cartChipText">0 seleccionados</span>
       </button>
@@ -143,18 +143,16 @@
        para que los enlaces existentes (nav, hero, footer) sigan sirviendo.
        ==================================================================== -->
   <div id="kits">
-    <section class="kits" id="anchetas">
-      <div class="section-head">
-        <span class="eyebrow">La estrella de diciembre</span>
-        <h2>Anchetas</h2>
-        <p>Selecciona la ancheta perfecta para regalar en Navidad y fin de año.</p>
-      </div>
-      <div class="kits-grid" id="kitsGrid"></div>
-    </section>
-
     <section class="kits kits-soon" id="kits-proximamente">
       <div class="section-head">
         <h2>Kits</h2>
+        <p>Descubre nuestros kits navideños, diseñados para compartir momentos especiales, agradecer y regalar experiencias únicas.</p>
+      </div>
+      <div class="kits-grid" id="kitsArmadosGrid"></div>
+      <div class="kits-cta">
+        <h3>En IP7 hacemos que <span>tu marca deje huella.</span></h3>
+        <p>Creamos experiencias a través de productos promocionales personalizados que conectan con tus clientes y fortalecen tu marca.</p>
+        <button class="btn btn-primary btn-lg js-open-quote" type="button">¡Hagamos que cada detalle cuente con IP7!</button>
       </div>
       <div class="kits-preview">
         <div class="kit-media">
@@ -174,8 +172,17 @@
           </div>
         </div>
       </div>
-      <div class="kits-grid" id="kitsArmadosGrid"></div>
     </section>
+
+    <section class="kits" id="anchetas">
+      <div class="section-head">
+        <span class="eyebrow">La estrella de diciembre</span>
+        <h2>Anchetas</h2>
+        <p>Selecciona la ancheta perfecta para regalar en Navidad y fin de año.</p>
+      </div>
+      <div class="kits-grid" id="kitsGrid"></div>
+    </section>
+
   </div>
 
   <section class="catalog" id="catalogo">
@@ -217,7 +224,7 @@
       <h4>Catálogo</h4>
       <p><a href="#kits">Kits &amp; Anchetas</a></p>
       <p><a href="#catalogo">Todos los productos</a></p>
-      <p><a href="#" class="js-open-drawer">Mi selección</a></p>
+      <p><a href="#" class="js-open-drawer">Cotizar</a></p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -230,16 +237,13 @@
 <!-- Barra flotante móvil -->
 <div class="mobile-bar" id="mobileBar">
   <button class="mobile-bar-item js-open-drawer" type="button">
-    <span class="mb-icon">🎁</span><span>Mi selección</span>
-    <span class="mb-badge" id="mobileCartBadge" hidden>0</span>
-  </button>
-  <button class="mobile-bar-item js-open-quote" type="button">
     <span class="mb-icon">🧾</span><span>Cotizar</span>
+    <span class="mb-badge" id="mobileCartBadge" hidden>0</span>
   </button>
 </div>
 
 <!-- Botón flotante de selección (desktop) -->
-<button class="cart-fab js-open-drawer" id="cartFab" type="button" aria-label="Ver mi selección">
+<button class="cart-fab js-open-drawer" id="cartFab" type="button" aria-label="Cotizar">
   <span class="cart-fab-icon">🎁</span>
   <span class="cart-fab-count" id="cartFabCount">0</span>
 </button>
@@ -248,32 +252,20 @@
 <div class="backdrop" id="backdrop"></div>
 <aside class="drawer" id="cartDrawer" aria-hidden="true">
   <div class="drawer-head">
-    <h3>🎁 Mi selección</h3>
+    <h3>🧾 Cotizar</h3>
     <button class="icon-btn js-close-panels" aria-label="Cerrar">✕</button>
   </div>
   <div class="drawer-body" id="drawerBody">
-    <p class="drawer-empty" id="drawerEmpty">Aún no has agregado nada. Explora los kits y productos y arma tu selección.</p>
+    <p class="drawer-empty" id="drawerEmpty">Aún no has agregado nada. Explora los kits y productos y agrégalos aquí para cotizar.</p>
     <ul class="drawer-list" id="drawerList"></ul>
-  </div>
-  <div class="drawer-foot">
     <div class="drawer-total" id="drawerTotal" hidden>
       <span>Valor total estimado</span>
       <strong id="drawerTotalValue">$0</strong>
     </div>
     <p class="drawer-total-note">No incluye fletes ni costos adicionales — tu ejecutivo te confirma el valor final.</p>
-    <button class="btn btn-primary btn-lg btn-block" id="goToQuoteBtn" type="button" disabled>Solicitar cotización</button>
-  </div>
-</aside>
-
-<!-- Modal de cotización -->
-<div class="modal" id="quoteModal" aria-hidden="true">
-  <div class="modal-card modal-card-lg">
-    <button class="icon-btn modal-close js-close-panels" aria-label="Cerrar">✕</button>
-    <div class="modal-head">
-      <span class="eyebrow">Solicitud de cotización</span>
-      <h3>Quiero estos regalos</h3>
-      <p>Completa tus datos y nuestro equipo comercial te contactará con la cotización personalizada.</p>
-    </div>
+    <div class="cotizar-form">
+      <h4>Tus datos</h4>
+      <p class="cotizar-intro">Completa tus datos y nuestro equipo comercial te contactará con la cotización personalizada.</p>
     <form id="quoteForm">
       <div class="form-grid">
         <label class="field">
@@ -306,10 +298,6 @@
         </label>
       </div>
 
-      <div class="quote-summary">
-        <h4>Selección</h4>
-        <ul id="quoteSummaryList" class="quote-summary-list"></ul>
-      </div>
 
       <div class="quote-actions">
         <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar solicitud por correo</button>
@@ -319,8 +307,9 @@
         <p class="quote-hint">Al enviar se abrirá tu cliente de correo con la solicitud lista para tu asesor.</p>
       </div>
     </form>
+    </div>
   </div>
-</div>
+</aside>
 
 <div class="toast" id="toast"></div>
 
@@ -402,7 +391,7 @@
   </div>
 </template>
 
-<script src="assets/js/products.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js?v=8"></script>
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>

@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // solo un respaldo por si `animationend` no llegara a disparar en
     // algún navegador.
     if (sleigh) sleigh.addEventListener("animationend", hideSplash);
-    const fallback = setTimeout(hideSplash, 5800);
+    const fallback = setTimeout(hideSplash, 4600);
     splash.addEventListener("click", () => {
       clearTimeout(fallback);
       hideSplash();
@@ -610,17 +610,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileCartBadge = document.getElementById("mobileCartBadge");
   const drawerList = document.getElementById("drawerList");
   const drawerEmpty = document.getElementById("drawerEmpty");
-  const goToQuoteBtn = document.getElementById("goToQuoteBtn");
   const drawerTotal = document.getElementById("drawerTotal");
   const drawerTotalValue = document.getElementById("drawerTotalValue");
 
   function renderCartUI() {
     const count = cartCount();
-    cartChipText.textContent = `${count} seleccionado${count !== 1 ? "s" : ""}`;
+    cartChipText.textContent = `Cotizar (${count})`;
     cartFabCount.textContent = count;
     mobileCartBadge.textContent = count;
     mobileCartBadge.hidden = count === 0;
-    goToQuoteBtn.disabled = count === 0;
 
     drawerList.innerHTML = "";
     const ids = Object.keys(cart);
@@ -683,19 +681,15 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCartUI();
       });
     });
-
-    renderQuoteSummary();
   }
 
   /* ---------------------------------------------------------------------
-     PANELES: drawer / modales
+     PANEL "COTIZAR": un solo panel con la selección y el formulario
      --------------------------------------------------------------------- */
   const backdrop = document.getElementById("backdrop");
   const cartDrawer = document.getElementById("cartDrawer");
-  const quoteModal = document.getElementById("quoteModal");
 
   function openPanel(panel) {
-    closeAllPanels();
     backdrop.classList.add("is-visible");
     panel.classList.add("is-open");
     document.body.style.overflow = "hidden";
@@ -703,52 +697,21 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeAllPanels() {
     backdrop.classList.remove("is-visible");
     cartDrawer.classList.remove("is-open");
-    quoteModal.classList.remove("is-open");
     document.body.style.overflow = "";
   }
 
-  document.querySelectorAll(".js-open-drawer").forEach((el) =>
+  document.querySelectorAll(".js-open-drawer, .js-open-quote").forEach((el) =>
     el.addEventListener("click", (e) => { e.preventDefault(); openPanel(cartDrawer); })
-  );
-  document.querySelectorAll(".js-open-quote").forEach((el) =>
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (cartCount() === 0) { openPanel(cartDrawer); showToast("Agrega productos antes de cotizar."); }
-      else openPanel(quoteModal);
-    })
   );
   document.querySelectorAll(".js-close-panels").forEach((el) =>
     el.addEventListener("click", () => closeAllPanels())
   );
   backdrop.addEventListener("click", closeAllPanels);
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAllPanels(); });
-  goToQuoteBtn.addEventListener("click", () => openPanel(quoteModal));
 
   /* ---------------------------------------------------------------------
-     RESUMEN DE COTIZACIÓN + ENVÍO
+     ENVÍO DE LA COTIZACIÓN
      --------------------------------------------------------------------- */
-  const quoteSummaryList = document.getElementById("quoteSummaryList");
-
-  function renderQuoteSummary() {
-    quoteSummaryList.innerHTML = "";
-    const ids = Object.keys(cart);
-    if (!ids.length) {
-      quoteSummaryList.innerHTML = '<li class="quote-summary-empty">Aún no has seleccionado nada.</li>';
-      return;
-    }
-    ids.forEach((id) => {
-      const item = itemById(id);
-      if (!item) return;
-      const qty = cart[id];
-      const unitPrice = unitPriceFor(item, qty);
-      const priceText = unitPrice != null
-        ? `${formatPrice(unitPrice * qty)} (${formatPrice(unitPrice)} c/u)`
-        : "Cotización especial";
-      const li = document.createElement("li");
-      li.innerHTML = `<span>${item.name} <em style="color:var(--text-faint); font-style:normal;">(${item.code})</em> — ${qty.toLocaleString("es-CO")} und.</span><span>${priceText}</span>`;
-      quoteSummaryList.appendChild(li);
-    });
-  }
 
   function buildQuotePayload(formData) {
     let grandTotal = 0;
@@ -926,19 +889,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCatalog();
   renderCartUI();
   applyFilters();
-
-  // Zoom de las fotos de kits: el punto ampliado sigue al cursor (solo mouse).
-  const kitsWrap = document.getElementById("kits");
-  if (kitsWrap) {
-    kitsWrap.addEventListener("pointermove", (e) => {
-      if (e.pointerType !== "mouse") return;
-      const media = e.target.closest(".kit-media");
-      if (!media || media.closest(".kits-preview")) return;
-      const r = media.getBoundingClientRect();
-      media.style.setProperty("--zx", ((e.clientX - r.left) / r.width) * 100 + "%");
-      media.style.setProperty("--zy", ((e.clientY - r.top) / r.height) * 100 + "%");
-    });
-  }
 
   // Vista previa del slider antes/después en la sección "Kits" (próximamente).
   const kitsPreviewReveal = document.getElementById("kitsPreviewReveal");
