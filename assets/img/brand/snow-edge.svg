@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="120" viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <!-- Sombra suave bajo los montículos, para dar volumen -->
+  <g fill="#cfe0e8" opacity=".55">
+    <circle cx="-4" cy="123" r="56"/><circle cx="106" cy="127" r="42"/><circle cx="216" cy="122" r="61"/>
+    <circle cx="326" cy="128" r="39"/><circle cx="436" cy="123" r="54"/><circle cx="546" cy="129" r="45"/>
+    <circle cx="656" cy="122" r="58"/><circle cx="766" cy="127" r="41"/><circle cx="876" cy="123" r="56"/>
+    <circle cx="986" cy="128" r="43"/><circle cx="1096" cy="122" r="60"/><circle cx="1206" cy="127" r="39"/>
+    <circle cx="1316" cy="123" r="54"/><circle cx="1426" cy="128" r="47"/><circle cx="1536" cy="122" r="56"/>
+  </g>
+  <!-- Montículos de nieve -->
+  <g fill="#fffdfb">
+    <circle cx="-10" cy="115" r="60"/><circle cx="100" cy="119" r="45"/><circle cx="210" cy="114" r="65"/>
+    <circle cx="320" cy="120" r="42"/><circle cx="430" cy="115" r="58"/><circle cx="540" cy="121" r="48"/>
+    <circle cx="650" cy="114" r="62"/><circle cx="760" cy="119" r="44"/><circle cx="870" cy="115" r="60"/>
+    <circle cx="980" cy="120" r="46"/><circle cx="1090" cy="114" r="64"/><circle cx="1200" cy="119" r="42"/>
+    <circle cx="1310" cy="115" r="58"/><circle cx="1420" cy="120" r="50"/><circle cx="1530" cy="114" r="60"/>
+  </g>
+  <!-- Relleno solido para que no queden huecos entre montículos y el borde inferior -->
+  <rect x="0" y="118" width="1440" height="2" fill="#fffdfb"/>
+</svg>

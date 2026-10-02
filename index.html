@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo Navidad y Fin de Año | Imagen Perfecta 7</title>
+<meta name="description" content="Catálogo interactivo de productos promocionales, kits y anchetas navideñas. Imagen Perfecta 7 — Asesores en Marketing.">
+<link rel="icon" type="image/svg+xml" href="assets/img/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="splash-active">
+
+<!-- Entrada / splash de carga — inspirada en la animación de apertura de Santa
+     Tracker de Google que compartió el usuario: cortina de dos paneles con
+     un personaje navideño y puntos de carga, se abre y revela el sitio. -->
+<div id="splash" role="presentation">
+  <div class="splash-panel splash-panel-top" aria-hidden="true">
+    <div class="splash-stars"></div>
+  </div>
+  <div class="splash-panel splash-panel-bottom" aria-hidden="true">
+    <img class="splash-forest" src="assets/img/brand/pine-row.svg" alt="">
+  </div>
+  <div class="splash-content">
+    <span class="splash-brand">Imagen Perfecta 7</span>
+    <div class="splash-loader">
+      <div class="splash-dots" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <p class="splash-caption">Empacando tu catálogo navideño…</p>
+      <span class="splash-skip">Toca para continuar</span>
+    </div>
+  </div>
+  <!-- Definición compartida del reno (renos blancos con asta/patas doradas),
+       la reutilizan los 3 trineos de abajo vía <use>. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="reindeer">
+        <ellipse cx="252" cy="82" rx="42" ry="25" fill="#ffffff"/>
+        <path d="M212 88q-10 4 -8 14" stroke="#c99a3f" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="300" cy="56" r="18" fill="#ffffff"/>
+        <ellipse cx="317" cy="61" rx="9" ry="7" fill="#ffffff"/>
+        <circle cx="325" cy="61" r="5" fill="#b8121f"/>
+        <circle cx="305" cy="51" r="2" fill="#241412"/>
+        <path d="M293 41L287 21M293 41L299 19M287 21L281 13M287 21L293 15M299 19L293 9M299 19L305 15" stroke="#c99a3f" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M270 102L278 130L288 130" stroke="#c99a3f" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M262 100L256 120L248 124" stroke="#c99a3f" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M224 102L216 126L208 130" stroke="#c99a3f" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M232 98L240 112L248 108" stroke="#c99a3f" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </g>
+      <g id="sleighSanta">
+        <!-- arnés trineo → 1er reno -->
+        <path d="M212 90Q175 80 142 74" stroke="#7d0f17" stroke-width="3" fill="none"/>
+        <!-- trineo -->
+        <path d="M26 130Q16 124 20 110" stroke="#c99a3f" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M26 128Q18 130 20 138L142 138Q150 130 140 126Z" fill="#7d0f17"/>
+        <path d="M32 92Q32 60 62 56L132 56Q144 56 144 70L144 120Q144 130 132 130L44 130Q32 130 32 118Z" fill="#b8121f"/>
+        <rect x="36" y="59" width="104" height="8" rx="4" fill="#c99a3f"/>
+        <path d="M140 72Q152 60 146 46" stroke="#c99a3f" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <!-- Santa sentado -->
+        <path d="M64 97Q64 62 90 60Q116 62 116 97Z" fill="#b8121f"/>
+        <rect x="64" y="88" width="52" height="10" fill="#241412"/>
+        <circle cx="90" cy="93" r="4" fill="#c99a3f"/>
+        <circle cx="90" cy="42" r="17" fill="#f3c9a5"/>
+        <path d="M73 44c0 12 8 20 17 20s17-8 17-20" fill="#fff"/>
+        <path d="M66 30Q90 0 114 30Q90 22 66 30Z" fill="#b8121f"/>
+        <rect x="64" y="27" width="52" height="9" rx="4.5" fill="#fff"/>
+        <circle cx="114" cy="6" r="6" fill="#fff"/>
+        <g class="mascot-arm" style="transform-origin:114px 67px;">
+          <path d="M114 67c10-4 18 0 20 10" stroke="#b8121f" stroke-width="12" stroke-linecap="round" fill="none"/>
+          <circle cx="134" cy="78" r="7" fill="#fff"/>
+        </g>
+        <!-- equipo de renos -->
+        <use href="#reindeer" x="0" y="0"/>
+        <path d="M325 61Q320 72 315 83" stroke="#7d0f17" stroke-width="3" fill="none"/>
+        <use href="#reindeer" x="103" y="-5"/>
+        <path d="M428 56Q423 74 418 92" stroke="#7d0f17" stroke-width="3" fill="none"/>
+        <use href="#reindeer" x="206" y="4"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- Un solo trineo cruza por el centro de la pantalla, de izquierda a
+       derecha; al llegar al borde dispara la apertura de la cortina (ver
+       initSplash en main.js). -->
+  <div class="splash-sleigh-track" aria-hidden="true">
+    <div class="splash-sleigh splash-sleigh-main" id="splashSleigh">
+      <div class="sleigh-bounce">
+        <svg viewBox="0 0 560 150"><use href="#sleighSanta"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lienzo de nieve (se dibuja por JS; se puede apagar con el botón de la navbar) -->
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#top" class="brand">
+      <span class="brand-wordmark">Imagen Perfecta 7<small>Catálogo Navidad · Fin de Año</small></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#kits" data-close>Kits &amp; Anchetas</a>
+      <a href="#catalogo" data-close>Productos</a>
+      <a href="#categorias" data-close>Categorías</a>
+      <a href="#" data-close class="js-open-drawer">Mi selección</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <button class="cart-chip js-open-drawer" type="button" aria-label="Ver mi selección">
+        <span class="cart-chip-icon">🎁</span>
+        <span id="cartChipText">0 seleccionados</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="hero-eyebrow">Diciembre 2026</span>
+      <h1 class="hero-title">Regalos, Kits<br>y Anchetas de<br><em>Fin de Año</em></h1>
+      <p class="hero-sub">Sorprende a tu equipo y a tus clientes con detalles personalizados con tu marca. Arma tu selección y pide la cotización en minutos.</p>
+      <div class="hero-actions">
+        <a href="#kits" class="btn btn-primary btn-lg">Ver kits &amp; anchetas</a>
+        <a href="#catalogo" class="btn btn-ghost btn-lg">Explorar productos</a>
+      </div>
+    </div>
+    <!-- Nieve "acumulada" en el borde del Hero: ilusión decorativa, no física -->
+    <div class="hero-snowdrift" aria-hidden="true">
+      <img src="assets/img/brand/snow-edge.svg" alt="">
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       ANCHETAS + espacio para KITS (próximamente). "#kits" envuelve las dos
+       para que los enlaces existentes (nav, hero, footer) sigan sirviendo.
+       ==================================================================== -->
+  <div id="kits">
+    <section class="kits" id="anchetas">
+      <div class="section-head">
+        <span class="eyebrow">La estrella de diciembre</span>
+        <h2>Anchetas</h2>
+        <p>Selecciona la ancheta perfecta para regalar en Navidad y fin de año.</p>
+      </div>
+      <div class="kits-grid" id="kitsGrid"></div>
+    </section>
+
+    <section class="kits kits-soon" id="kits-proximamente">
+      <div class="section-head">
+        <h2>Kits</h2>
+      </div>
+      <div class="kits-preview">
+        <div class="kit-media">
+          <div class="reveal" data-reveal id="kitsPreviewReveal">
+            <!-- Par de fotos que dejó el usuario (1200x900, 4:3, mismo encuadre):
+                 "antes" = kit genérico (cartón kraft), "después" = el mismo kit
+                 personalizado con marca. Se muestran completas, sin recortar. -->
+            <img class="reveal-img reveal-after" src="assets/img/kits/kit-demo-personalizado.jpg" alt="Kit personalizado con marca" draggable="false">
+            <img class="reveal-img reveal-before" src="assets/img/kits/kit-demo-generico.jpg" alt="Kit genérico sin personalizar" draggable="false">
+            <div class="reveal-divider" aria-hidden="true">
+              <span class="reveal-handle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l-4 6 4 6M15 6l4 6-4 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </div>
+            <span class="reveal-hint">Desliza →</span>
+            <input type="range" class="reveal-range" min="0" max="100" value="50" step="0.1" aria-label="Deslizar para ver cómo se personaliza un kit">
+          </div>
+        </div>
+      </div>
+      <div class="kits-grid" id="kitsArmadosGrid"></div>
+    </section>
+  </div>
+
+  <section class="catalog" id="catalogo">
+    <div class="toolbar" id="toolbar">
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="text" id="searchInput" placeholder="¿Qué producto estás buscando?" autocomplete="off">
+      </div>
+      <div class="filter-pills" id="categorias">
+        <button class="pill is-active" data-filter="todos" type="button">Todos</button>
+        <!-- Los botones de categoría se generan desde products.js -->
+      </div>
+    </div>
+
+    <div id="noResults" class="no-results" hidden>
+      <p>No encontramos productos con ese criterio.</p>
+      <button class="btn btn-outline btn-sm" id="clearFilters" type="button">Limpiar filtros</button>
+    </div>
+
+    <div id="catalogSections"></div>
+
+    <p class="catalog-note">Todas las imágenes son de referencia. Productos sujetos a inventario y vigencia de temporada.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contacto">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-wordmark">Imagen Perfecta 7</span>
+      <p>Catálogo de temporada elaborado por Imagen Perfecta 7 · Asesores en Marketing, productos promocionales.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>✉️ <a href="mailto:mercadeo@ip7.com.co">mercadeo@ip7.com.co</a></p>
+      <p>📍 Cl. 72A #63-12, Bogotá</p>
+    </div>
+    <div class="footer-col">
+      <h4>Catálogo</h4>
+      <p><a href="#kits">Kits &amp; Anchetas</a></p>
+      <p><a href="#catalogo">Todos los productos</a></p>
+      <p><a href="#" class="js-open-drawer">Mi selección</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Imagen Perfecta 7. Todos los derechos reservados.</span>
+    <span class="footer-bottom-sep">·</span>
+    <span>Creado por <a href="https://www.linkedin.com/in/sneyther-linares-576265230/" target="_blank" rel="noopener" style="text-decoration: underline;">Sneyther Linares</a>, Coordinador Comercial y de Mercadeo</span>
+  </div>
+</footer>
+
+<!-- Barra flotante móvil -->
+<div class="mobile-bar" id="mobileBar">
+  <button class="mobile-bar-item js-open-drawer" type="button">
+    <span class="mb-icon">🎁</span><span>Mi selección</span>
+    <span class="mb-badge" id="mobileCartBadge" hidden>0</span>
+  </button>
+  <button class="mobile-bar-item js-open-quote" type="button">
+    <span class="mb-icon">🧾</span><span>Cotizar</span>
+  </button>
+</div>
+
+<!-- Botón flotante de selección (desktop) -->
+<button class="cart-fab js-open-drawer" id="cartFab" type="button" aria-label="Ver mi selección">
+  <span class="cart-fab-icon">🎁</span>
+  <span class="cart-fab-count" id="cartFabCount">0</span>
+</button>
+
+<!-- Drawer de selección -->
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="cartDrawer" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>🎁 Mi selección</h3>
+    <button class="icon-btn js-close-panels" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody">
+    <p class="drawer-empty" id="drawerEmpty">Aún no has agregado nada. Explora los kits y productos y arma tu selección.</p>
+    <ul class="drawer-list" id="drawerList"></ul>
+  </div>
+  <div class="drawer-foot">
+    <div class="drawer-total" id="drawerTotal" hidden>
+      <span>Valor total estimado</span>
+      <strong id="drawerTotalValue">$0</strong>
+    </div>
+    <p class="drawer-total-note">No incluye fletes ni costos adicionales — tu ejecutivo te confirma el valor final.</p>
+    <button class="btn btn-primary btn-lg btn-block" id="goToQuoteBtn" type="button" disabled>Solicitar cotización</button>
+  </div>
+</aside>
+
+<!-- Modal de cotización -->
+<div class="modal" id="quoteModal" aria-hidden="true">
+  <div class="modal-card modal-card-lg">
+    <button class="icon-btn modal-close js-close-panels" aria-label="Cerrar">✕</button>
+    <div class="modal-head">
+      <span class="eyebrow">Solicitud de cotización</span>
+      <h3>Quiero estos regalos</h3>
+      <p>Completa tus datos y nuestro equipo comercial te contactará con la cotización personalizada.</p>
+    </div>
+    <form id="quoteForm">
+      <div class="form-grid">
+        <label class="field">
+          <span>Nombre *</span>
+          <input type="text" name="nombre" required>
+        </label>
+        <label class="field">
+          <span>Empresa *</span>
+          <input type="text" name="empresa" required>
+        </label>
+        <label class="field">
+          <span>Correo electrónico *</span>
+          <input type="email" name="correo" required>
+        </label>
+        <label class="field">
+          <span>Teléfono *</span>
+          <input type="tel" name="telefono" required>
+        </label>
+        <label class="field field-full">
+          <span>Tu asesor *</span>
+          <select name="asesor" id="asesorSelect" required></select>
+        </label>
+        <label class="field field-full">
+          <span>Ciudad</span>
+          <input type="text" name="ciudad">
+        </label>
+        <label class="field field-full">
+          <span>Comentarios adicionales</span>
+          <textarea name="comentarios" rows="3" placeholder="Fecha de entrega, personalización, colores, presupuesto por unidad, etc."></textarea>
+        </label>
+      </div>
+
+      <div class="quote-summary">
+        <h4>Selección</h4>
+        <ul id="quoteSummaryList" class="quote-summary-list"></ul>
+      </div>
+
+      <div class="quote-actions">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar solicitud por correo</button>
+        <div class="quote-actions-row">
+          <button type="button" class="btn btn-outline btn-sm" id="copyRequestBtn">Copiar solicitud</button>
+        </div>
+        <p class="quote-hint">Al enviar se abrirá tu cliente de correo con la solicitud lista para tu asesor.</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Plantilla de tarjeta de producto -->
+<template id="cardTemplate">
+  <article class="card">
+    <div class="card-media">
+      <img loading="lazy" src="" alt="">
+      <span class="card-code"></span>
+      <button type="button" class="gallery-arrow gallery-prev" aria-label="Foto anterior">‹</button>
+      <button type="button" class="gallery-arrow gallery-next" aria-label="Foto siguiente">›</button>
+      <div class="gallery-dots"></div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"></h3>
+      <p class="card-desc"></p>
+      <ul class="card-features"></ul>
+      <p class="card-price"></p>
+      <div class="card-qty">
+        <span class="qty-label">Cantidad</span>
+        <div class="qty-control">
+          <button type="button" class="qty-btn qty-minus" aria-label="Restar">–</button>
+          <input type="number" class="qty-input" max="50000" inputmode="numeric">
+          <button type="button" class="qty-btn qty-plus" aria-label="Sumar">+</button>
+        </div>
+        <div class="qty-presets"></div>
+      </div>
+      <button type="button" class="btn btn-primary btn-block card-add">Agregar a mi selección</button>
+    </div>
+  </article>
+</template>
+
+<!-- Plantilla de tarjeta de KIT. El contenedor .kit-media queda vacío: main.js
+     le mete una foto normal (kit.photo) o el slider antes/después (kit.reveal,
+     ver #revealTemplate) según lo que traiga cada kit. -->
+<template id="kitTemplate">
+  <article class="kit-card">
+    <div class="kit-media"></div>
+    <div class="kit-body">
+      <div class="kit-head">
+        <h3 class="kit-title"></h3>
+        <span class="kit-code"></span>
+      </div>
+      <p class="kit-desc"></p>
+      <div class="kit-contents">
+        <span class="kit-contents-label">Incluye</span>
+        <ul class="kit-contents-list"></ul>
+      </div>
+      <p class="card-price kit-price"></p>
+      <div class="card-qty">
+        <span class="qty-label">Cantidad</span>
+        <div class="qty-control">
+          <button type="button" class="qty-btn qty-minus" aria-label="Restar">–</button>
+          <input type="number" class="qty-input" max="50000" inputmode="numeric">
+          <button type="button" class="qty-btn qty-plus" aria-label="Sumar">+</button>
+        </div>
+        <div class="qty-presets"></div>
+      </div>
+      <button type="button" class="btn btn-primary btn-block card-add">Agregar a mi selección</button>
+    </div>
+  </article>
+</template>
+
+<!-- Slider antes / después, se usa dentro de .kit-media cuando el kit trae
+     `reveal` en vez de una foto normal (`photo`). -->
+<template id="revealTemplate">
+  <div class="reveal" data-reveal>
+    <img class="reveal-img reveal-after" src="" alt="" draggable="false">
+    <img class="reveal-img reveal-before" src="" alt="" draggable="false">
+    <div class="reveal-label reveal-label-before"></div>
+    <div class="reveal-label reveal-label-after"></div>
+    <div class="reveal-divider" aria-hidden="true">
+      <span class="reveal-handle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l-4 6 4 6M15 6l4 6-4 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </div>
+    <span class="reveal-hint">Desliza →</span>
+    <input type="range" class="reveal-range" min="0" max="100" value="50" step="0.1" aria-label="Deslizar para revelar el contenido del kit">
+  </div>
+</template>
+
+<script src="assets/js/products.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
