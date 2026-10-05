@@ -38,7 +38,7 @@ const CATEGORIES = [
   { slug: "bebidas",     label: "Mugs y Café" },
   { slug: "tecnologia",  label: "Tecnología" },
   { slug: "morrales",    label: "Morrales y Bolsos" },
-  { slug: "bolsas",      label: "Bolsas" },
+  { slug: "bolsas",      label: "Empaques" },
   { slug: "hogar",       label: "Hogar y Descanso" },
   { slug: "accesorios",  label: "Accesorios" },
   { slug: "juegos",      label: "Juegos y Entretenimiento" },
@@ -977,6 +977,38 @@ const PRODUCTS = [
     features: ["Doble pared vacuum", "Base antideslizante", "350 ml"],
     minQty: 10,
     images: ["assets/img/productos/mug-metalico-harlem.jpg"],
+  },
+
+  // ---------------- CAJAS (categoría Empaques, slug "bolsas") ----------------
+  {
+    id: "caja-regalo-verne",
+    name: "Caja de Regalo Verne",
+    code: "ACC 009 N",
+    category: "bolsas",
+    description: "Caja grande para sets de regalo. Material rígido y fácil armado, ideal para crear tus propias combinaciones de sets. Cuenta con asa de mano y broche metálico de presión para un cierre seguro. Además, incorpora una solapa imantada para mayor protección de los componentes. Material: cartón / curpiel. Dimensiones: 31 x 25,5 x 10,2 cm.",
+    features: ["Rígida y de fácil armado", "Asa y solapa imantada", "31 x 25,5 x 10,2 cm"],
+    minQty: 10,
+    images: ["assets/img/productos/caja-regalo-verne.jpg"],
+  },
+  {
+    id: "caja-tapa-base-micro-kraft",
+    name: "Caja Tapa y Base Micro Kraft",
+    code: "CAJA N4",
+    category: "bolsas",
+    description: "Caja tapa y base en cartón microcorrugado kraft: un empaque ecológico de dos cuerpos ideal para regalos y detalles. Dimensiones: 30 x 20 x 9 cm.",
+    features: ["Cartón microcorrugado kraft", "Empaque ecológico", "30 x 20 x 9 cm"],
+    minQty: 10,
+    images: ["assets/img/productos/caja-micro-kraft.webp"],
+  },
+  {
+    id: "caja-cofre-micro-kraft",
+    name: "Caja Tipo Cofre Micro Kraft",
+    code: "CAJA N5",
+    category: "bolsas",
+    description: "Caja tipo cofre en cartón microcorrugado kraft: un empaque ecológico de dos cuerpos ideal para regalos y detalles. Dimensiones: 20 x 14 x 7 cm.",
+    features: ["Cartón microcorrugado kraft", "Empaque ecológico", "20 x 14 x 7 cm"],
+    minQty: 10,
+    images: ["assets/img/productos/caja-micro-kraft.webp"],
   },
 
   // ---------------- LOTE 2026-10-05 (5) — TECNOLOGÍA ----------------
