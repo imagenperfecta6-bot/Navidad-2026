@@ -204,8 +204,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const apply = () => el.style.setProperty("--reveal-pos", range.value + "%");
     apply();
     const onMove = () => { apply(); el.classList.add("is-touched"); };
+    // Teclado / lectores de pantalla: el <input range> sigue funcionando.
     range.addEventListener("input", onMove);
     range.addEventListener("change", onMove);
+
+    // Mouse y táctil: arrastre propio con pointer events. El <input range>
+    // invisible no dejaba arrastrar bien en el celular (competía con el scroll
+    // vertical); con `touch-action: pan-y` el gesto horizontal llega aquí y el
+    // vertical sigue desplazando la página.
+    let dragging = false;
+    const setFromX = (clientX) => {
+      const r = el.getBoundingClientRect();
+      range.value = Math.min(100, Math.max(0, ((clientX - r.left) / r.width) * 100));
+      onMove();
+    };
+    el.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      dragging = true;
+      try { el.setPointerCapture(e.pointerId); } catch (_) {}
+      if (e.pointerType === "mouse") setFromX(e.clientX);
+    });
+    el.addEventListener("pointermove", (e) => { if (dragging) setFromX(e.clientX); });
+    const stop = () => { dragging = false; };
+    el.addEventListener("pointerup", stop);
+    el.addEventListener("pointercancel", stop);
   }
 
   /* ---------------------------------------------------------------------
@@ -754,8 +776,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `Nombre: ${formData.nombre}\n` +
       `Empresa: ${formData.empresa}\n` +
       `Correo: ${formData.correo}\n` +
-      `Teléfono: ${formData.telefono}\n` +
-      `Ciudad: ${formData.ciudad || "-"}\n\n` +
+      `Teléfono: ${formData.telefono}\n\n` +
       `Selección:\n${lineasProductos || "(sin productos seleccionados)"}\n\n` +
       `Valor total estimado: ${totalTxt}\n` +
       `(No incluye fletes ni costos adicionales. Incluye 1 logo, 1 tinta, 1 marca. El armado de kits se cotiza aparte. Sujeto a inventario y vigencia de temporada.)\n\n` +
@@ -792,7 +813,6 @@ document.addEventListener("DOMContentLoaded", () => {
       correo: fd.get("correo") || "",
       telefono: fd.get("telefono") || "",
       asesor: fd.get("asesor") || "",
-      ciudad: fd.get("ciudad") || "",
       comentarios: fd.get("comentarios") || "",
     };
   }

@@ -421,7 +421,8 @@ body.splash-active{ overflow:hidden; }
 
 /* --- El componente reveal (antes / después) --- */
 .reveal{
-  position:absolute; inset:0; user-select:none; touch-action:pan-y;
+  position:absolute; inset:0; user-select:none; touch-action:pan-y; cursor:ew-resize;
+  -webkit-user-drag:none; -webkit-tap-highlight-color:transparent;
 }
 .reveal-img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -455,7 +456,7 @@ body.splash-active{ overflow:hidden; }
 }
 .reveal-range{
   position:absolute; inset:0; width:100%; height:100%; margin:0;
-  opacity:0; cursor:ew-resize; z-index:5;
+  opacity:0; cursor:ew-resize; z-index:5; pointer-events:none;
   -webkit-appearance:none; appearance:none; background:transparent;
 }
 .reveal-range::-webkit-slider-thumb{

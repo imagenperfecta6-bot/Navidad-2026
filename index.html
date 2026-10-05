@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=17">
+<link rel="stylesheet" href="assets/css/styles.css?v=18">
 </head>
 <body class="splash-active">
 
@@ -110,7 +110,7 @@
 
     <div class="navbar-actions">
       <button class="cart-chip js-open-drawer" type="button" aria-label="Cotizar">
-        <span class="cart-chip-icon">🎁</span>
+        <span class="cart-chip-icon">🛒</span>
         <span id="cartChipText">0 seleccionados</span>
       </button>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
@@ -242,14 +242,14 @@
 <!-- Barra flotante móvil -->
 <div class="mobile-bar" id="mobileBar">
   <button class="mobile-bar-item js-open-drawer" type="button">
-    <span class="mb-icon">🧾</span><span>Cotizar</span>
+    <span class="mb-icon">🛒</span><span>Cotizar</span>
     <span class="mb-badge" id="mobileCartBadge" hidden>0</span>
   </button>
 </div>
 
 <!-- Botón flotante de selección (desktop) -->
 <button class="cart-fab js-open-drawer" id="cartFab" type="button" aria-label="Cotizar">
-  <span class="cart-fab-icon">🎁</span>
+  <span class="cart-fab-icon">🛒</span>
   <span class="cart-fab-count" id="cartFabCount">0</span>
 </button>
 
@@ -257,7 +257,7 @@
 <div class="backdrop" id="backdrop"></div>
 <aside class="drawer" id="cartDrawer" aria-hidden="true">
   <div class="drawer-head">
-    <h3>🧾 Cotizar</h3>
+    <h3>🛒 Cotizar</h3>
     <button class="icon-btn js-close-panels" aria-label="Cerrar">✕</button>
   </div>
   <div class="drawer-body" id="drawerBody">
@@ -292,10 +292,6 @@
         <label class="field field-full">
           <span>Tu asesor *</span>
           <select name="asesor" id="asesorSelect" required></select>
-        </label>
-        <label class="field field-full">
-          <span>Ciudad</span>
-          <input type="text" name="ciudad">
         </label>
         <label class="field field-full">
           <span>Comentarios adicionales</span>
@@ -396,7 +392,7 @@
   </div>
 </template>
 
-<script src="assets/js/products.js?v=17"></script>
-<script src="assets/js/main.js?v=17"></script>
+<script src="assets/js/products.js?v=18"></script>
+<script src="assets/js/main.js?v=18"></script>
 </body>
 </html>
