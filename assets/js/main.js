@@ -546,7 +546,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // resto agrupado por categoría (orden de CATEGORIES), cada una A–Z.
     const isSet = (p) => p.category === "sets" || /^set\b/i.test(p.name);
     const sets = PRODUCTS.filter(isSet);
-    const byName = (a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" });
+    // Dentro de cada categoría: las "Tabla…" primero y luego A–Z.
+    const rank = (p) => (/^tabla\b/i.test(p.name) ? 0 : 1);
+    const byName = (a, b) =>
+      rank(a) - rank(b) || a.name.localeCompare(b.name, "es", { sensitivity: "base" });
     const rest = [];
     CATEGORIES.forEach((cat) => {
       rest.push(...PRODUCTS.filter((p) => !isSet(p) && p.category === cat.slug).sort(byName));
