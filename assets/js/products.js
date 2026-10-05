@@ -1037,7 +1037,7 @@ const KITS_ARMADOS = [
     code: "KIT-102",
     description: "Todo para preparar café en casa u oficina: prensa francesa, café Quindío de origen con notas a chocolate y panela y un termo de acero inoxidable con grabado láser de tu marca. Presentado en caja de regalo.",
     contents: ["Prensa francesa", "Café Quindío 250 g — Cosecha Especial", "Termo de acero inoxidable con grabado láser"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-102-barista.jpg",
     video: "assets/img/kits/kit-102-barista.mp4?v=2",
   },
@@ -1047,7 +1047,7 @@ const KITS_ARMADOS = [
     code: "KIT-107",
     description: "El clásico para brindar: vino tinto Carmenere, queso holandés, chocolates Ferrero Rocher y una copa de cristal. Presentado en caja de regalo.",
     contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "Chocolates Ferrero Rocher", "Copa de vino"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-107.jpg",
   },
   {
@@ -1065,7 +1065,7 @@ const KITS_ARMADOS = [
     code: "KIT-103",
     description: "Para cerrar la cena en grande: café de origen Nariño, crema irlandesa Baileys, galletas danesas y dos vasos de doble pared para disfrutar la sobremesa. Presentado en caja de regalo.",
     contents: ["Café Juan Valdez de origen Nariño", "Baileys Original Irish Cream", "Galletas Royal Dansk 7 oz", "2 vasos de vidrio doble pared"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-103-sobremesa.jpg",
   },
   {
@@ -1074,7 +1074,7 @@ const KITS_ARMADOS = [
     code: "KIT-104",
     description: "Una caja para compartir en las reuniones de diciembre: queso holandés, papas Pringles, chocolates Ferrero Rocher, galletas danesas y crema irlandesa Baileys. Presentado en caja de regalo.",
     contents: ["Queso Holandés Alpina 250 g", "Papas Pringles BBQ 71 g", "Baileys Original Irish Cream", "Chocolates Ferrero Rocher 50 g", "Galletas Royal Dansk 7 oz"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-104-picoteo.jpg",
   },
   {
@@ -1083,15 +1083,15 @@ const KITS_ARMADOS = [
     code: "KIT-105",
     description: "El kit para brindar: dos cervezas Corona Extra, mix de maní, cacao y pretzels, papas Pringles y una copa de vidrio. Presentado en caja de regalo.",
     contents: ["2 cervezas Corona Extra", "Mix Cacao y Pretzels Manitoba 130 g", "Papas Pringles BBQ 71 g", "Copa de vidrio"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-105-cervecero.jpg",
   },
   {
     id: "kit-cafe-express",
     name: "Kit Café Express",
     code: "KIT-106",
-    description: "Para los que no se pierden su café: cafetera italiana, dos tazas de vidrio y café 100% colombiano de origen Quindío, molido. Presentado en caja de cartón kraft con detalles en rojo.",
-    contents: ["Cafetera italiana (moka)", "2 tazas de vidrio", "Café Quindío Génova 340 g"],
+    description: "Para quienes no se pierden su café de cada día: cafetera italiana (moka) de 6 tazas con la que se prepara un café intenso y aromático en minutos, dos tazas de vidrio para servirlo y café 100% colombiano de origen Quindío, molido. Presentado en caja de cartón kraft con detalles en rojo.",
+    contents: ["Cafetera italiana (moka) de 6 tazas", "2 tazas de vidrio", "Café Quindío Génova 340 g"],
     minQty: 10,
     photo: "assets/img/kits/kit-106.jpg",
   },
@@ -1110,16 +1110,16 @@ const KITS_ARMADOS = [
     code: "KIT-109",
     description: "Un plan de a dos: vino tinto Carmenere, queso holandés, dos copas y una tabla de bambú para servir. Presentado en caja de regalo.",
     contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "2 copas de vino", "Tabla de bambú"],
-    minQty: 10,
+    minQty: 20,
     photo: "assets/img/kits/kit-109.jpg",
   },
   {
     id: "kit-nevera-navidena",
     name: "Kit Navidad Fresh",
     code: "KIT-110",
-    description: "Para compartir con el equipo: nevera portátil roja con cervezas Corona, papas Pringles, mix de frutos secos con cacao y queso holandés.",
-    contents: ["Nevera portátil", "6 cervezas Corona en lata", "Papas Pringles Original 124 g", "Mix Cacao Manitoba", "Queso Holandés Alpina"],
-    minQty: 10,
+    description: "Para compartir con el equipo en planes al aire libre, reuniones o celebraciones: nevera portátil roja de 11,4 litros con asa para mantener todo bien frío, acompañada de cervezas Corona en lata, papas Pringles, mix de frutos secos con cacao y queso holandés.",
+    contents: ["Nevera portátil de 11,4 litros", "6 cervezas Corona en lata", "Papas Pringles Original 124 g", "Mix Cacao Manitoba", "Queso Holandés Alpina"],
+    minQty: 20,
     photo: "assets/img/kits/kit-110.jpg",
   },
 ];
@@ -1128,7 +1128,7 @@ const KITS_ARMADOS = [
    KITS / ANCHETAS
    --------------------------------------------------------------------------
    Sin precio de lista: las anchetas van siempre a "Cotización especial".
-   Sí tienen cantidad mínima de pedido (minQty = 10 en las 3 por ahora).
+   Sí tienen cantidad mínima de pedido (minQty = 100 en las 3).
 
    Cada kit se muestra con UNA de estas dos cosas en .kit-media:
    - `photo`: una foto normal (usar esto para anchetas/canastas — no tienen
@@ -1137,57 +1137,66 @@ const KITS_ARMADOS = [
      afterLabel}) — para kits tipo caja de regalo donde sí aplica mostrar
      "cerrado → abierto" (ver README).
 
-   >>> PENDIENTE <<<
-   Las listas de contenido de estas 3 anchetas vienen de capturas de
-   pantalla que el usuario compartió en el chat — en cada una solo se
-   alcanzan a leer 2-3 productos con su SKU; el resto (hasta completar el
-   total real de productos) queda marcado como "por confirmar". Las fotos
-   (`photo`) son las tarjetas de referencia que compartió (con precio y
-   conteo de productos "quemados" en la imagen) — como ya no mostramos
-   precio en la tarjeta, esos valores solo se ven dentro de la foto misma;
-   avisar si se quiere una foto sin ese texto.
+   Las listas de contenido (con SKU) salen de las tarjetas de cada ancheta. Las
+   fotos (`photo`, 1254x1254) son esas mismas tarjetas, con el valor y el conteo
+   de productos "quemados" en la imagen; se piden en 100 unidades mínimo.
    ========================================================================== */
 const KITS = [
   {
     id: "ancheta-mesa-festiva",
     name: "Ancheta Mesa Festiva",
     code: "ANCHETA-01",
-    description: "Ancheta navideña con productos para la mesa festiva de diciembre.",
+    description: "Todo lo que necesitas para armar una mesa decembrina: la mezcla de buñuelos y la natilla de siempre, arequipe y galletas Caravana para el postre, y un plato fuerte listo con pasta, salsa napolitana y pollo. 7 productos para celebrar en familia.",
     contents: [
       "Mezcla para Buñuelos Maizena 300 g (SKU 3522)",
-      "Mezcla de Natilla Tradicional Maizena 300 g (SKU 3523)",
+      "Mezcla de Natilla Maizena 300 g (SKU 3523)",
       "Arequipe Alpina 220 g (SKU 1013)",
-      "+ 4 productos por confirmar (la lista trae 7 en total)",
+      "Galleta Caravana Noel bolsa 120 g (SKU 2847)",
+      "Penne Rigate Monticello 500 g (SKU 1127)",
+      "Salsa Napoletana Monticello 400 g (SKU 2277)",
+      "Fantasía de Pollo Zenú x 400 g (SKU 4451)",
     ],
-    minQty: 10,
-    photo: "assets/img/kits/ancheta-mesa-festiva.webp",
+    minQty: 100,
+    photo: "assets/img/kits/ancheta-mesa-festiva.webp?v=2",
   },
   {
     id: "ancheta-esenciales",
     name: "Ancheta Esenciales",
     code: "ANCHETA-02",
-    description: "Ancheta con productos que no pueden faltar en la despensa de la semana.",
+    description: "Los básicos de la despensa que no pueden faltar en la semana, con un detalle de diciembre: pasta, arroz, frijoles, aceite, atún y café para el día a día, y chocolisto, leche en polvo, galletas Caravana y arequipe para endulzar. 10 productos útiles para regalar.",
     contents: [
       "Spaghetti Clásico Doria 250 g (SKU 2449)",
       "Arroz Diana x 500 g (SKU 3825)",
-      "Frijoles Zenú (enlatado — referencia visible, código por confirmar)",
-      "Atún Zenú en agua (enlatado — referencia visible, código por confirmar)",
-      "+ 6 productos por confirmar (la lista trae 10 en total)",
+      "Frijoles Antioqueños Zenú 310 g (SKU 2618)",
+      "Aceite Diana 450 ml (SKU 3202)",
+      "Lomo de Atún en Agua Zenú 160 g (SKU 3082)",
+      "Café Fuerte Sello Rojo 500 g (SKU 2634)",
+      "Chocolisto 200 g (SKU 2873)",
+      "Leche en Polvo Entera Induleche 200 g (SKU 3151)",
+      "Galleta Navidad Caravana Noel 200 g (SKU 3444)",
+      "Arequipe Alpina 220 g (SKU 1013)",
     ],
-    minQty: 10,
-    photo: "assets/img/kits/ancheta-esenciales.webp",
+    minQty: 100,
+    photo: "assets/img/kits/ancheta-esenciales.webp?v=2",
   },
   {
     id: "ancheta-antojos",
     name: "Ancheta Antojos",
     code: "ANCHETA-03",
-    description: "Ancheta pensada para calmar todos los antojos de diciembre.",
+    description: "Para calmar todos los antojos de diciembre: queso holandés navideño, arequipe, galletas, pasaboca y chocolatina para picar, mezcla de pancakes con duraznos, natilla de arequipe, cappuccino de vainilla y jugo de manzana. 10 productos para compartir.",
     contents: [
       "Queso Holandés Navideño Alpina 250 g (SKU 3468)",
       "Arequipe Alpina 220 g (SKU 1013)",
-      "+ 8 productos por confirmar (la lista trae 10 en total)",
+      "Galleta Navidad Noel 200 g (SKU 3443)",
+      "Pasaboca Kraks La Especial 140 g (SKU 2689)",
+      "Mezcla para Pancakes Corona 320 g (SKU 2615)",
+      "Duraznos en Mitades La Coruña 425 g (SKU 2981)",
+      "Cappuccino Vainilla Colcafé 18 g x 16 sobres (SKU 2795)",
+      "Chocolatina Flow Jumbo 14 und. de 9 g (SKU 2842)",
+      "Natilla Arequipe Maizena 300 g (SKU 3511)",
+      "Jugo Néctar de Manzana Alpina 1000 g (SKU 2896)",
     ],
-    minQty: 10,
-    photo: "assets/img/kits/ancheta-antojos.webp",
+    minQty: 100,
+    photo: "assets/img/kits/ancheta-antojos.webp?v=2",
   },
 ];
