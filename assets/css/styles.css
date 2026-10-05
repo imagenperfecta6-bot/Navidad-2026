@@ -380,7 +380,8 @@ body.splash-active{ overflow:hidden; }
 
 /* Vista previa de "Kits" mientras aún no hay línea de kits armada: el
    mismo slider antes/después con las imágenes de demo, más un copy corto. */
-.kits-cta{ max-width:560px; margin:56px auto 0; padding:0 24px; text-align:left; }
+.kits-feature{ max-width:560px; margin:56px auto 50px; display:flex; flex-direction:column; gap:40px; }
+.kits-cta{ padding:0 24px; text-align:left; }
 .kits-cta h3{
   font-family:var(--font-body); font-weight:800; letter-spacing:-.02em; line-height:1.12;
   font-size:clamp(1.8rem,4.2vw,2.5rem); color:var(--text); margin:0 0 16px;
@@ -389,7 +390,7 @@ body.splash-active{ overflow:hidden; }
 .kits-cta p{ color:var(--text-muted); font-size:1.05rem; line-height:1.6; margin:0 0 26px; }
 .kits-cta .btn{ white-space:normal; text-align:center; }
 .kits-preview{
-  max-width:560px; margin:40px auto 50px; display:flex; flex-direction:column; align-items:center; gap:22px;
+  width:100%; margin:0; display:flex; flex-direction:column; align-items:center; gap:22px;
 }
 .kits-preview .kit-media{
   width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-card);
@@ -875,3 +876,21 @@ body.splash-active{ overflow:hidden; }
 .cotizar-intro{ color:var(--text-muted); font-size:.86rem; margin-bottom:16px; line-height:1.45; }
 .cotizar-form .form-grid{ grid-template-columns:1fr; gap:14px; }
 .drawer-total[hidden]{ display:none; }
+
+/* Escritorio: el mensaje IP7 a la izquierda y la caja dinámica a la derecha;
+   en celular se apilan (mensaje arriba, caja abajo). */
+@media (min-width: 900px){
+  .kits-feature{ max-width:1100px; flex-direction:row; align-items:center; gap:56px; padding:0 24px; }
+  .kits-feature .kits-cta{ flex:1 1 0; padding:0; }
+  .kits-feature .kits-preview{ flex:1 1 0; min-width:0; }
+}
+
+/* Título de la sección de productos: misma tipografía del hero. */
+.catalog-head{ text-align:center; padding:8px 24px 28px; }
+.catalog-title{
+  font-size:clamp(2.2rem, 5.5vw, 3.6rem); font-weight:900; letter-spacing:-.02em; line-height:1.05;
+  color:var(--text); margin:0;
+}
+.catalog-title em{ font-family:"Playfair Display", Georgia, "Times New Roman", serif; font-style:italic; font-weight:600; color:var(--gold); }
+.mb-badge{ right:auto; left:calc(50% + 8px); }
+.mb-badge[hidden]{ display:none; }

@@ -519,11 +519,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderCatalog() {
     catalogSections.innerHTML = "";
-    // Una sola cuadrícula: primero los Sets (en el orden de products.js) y
-    // después el resto de productos en orden alfabético por nombre.
-    const sets = PRODUCTS.filter((p) => p.category === "sets");
-    const rest = PRODUCTS.filter((p) => p.category !== "sets")
-      .sort((a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" }));
+    // Una sola cuadrícula: primero todo lo que es un Set (categoría Sets o
+    // nombre que empieza por "Set", en el orden de products.js) y después el
+    // resto agrupado por categoría (orden de CATEGORIES), cada una A–Z.
+    const isSet = (p) => p.category === "sets" || /^set\b/i.test(p.name);
+    const sets = PRODUCTS.filter(isSet);
+    const byName = (a, b) => a.name.localeCompare(b.name, "es", { sensitivity: "base" });
+    const rest = [];
+    CATEGORIES.forEach((cat) => {
+      rest.push(...PRODUCTS.filter((p) => !isSet(p) && p.category === cat.slug).sort(byName));
+    });
 
     const section = document.createElement("section");
     section.className = "category-block";
