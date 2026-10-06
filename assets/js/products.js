@@ -1095,8 +1095,8 @@ const KITS_ARMADOS = [
     id: "kit-sobremesa",
     name: "Kit Entre Amigos",
     code: "KIT-103",
-    description: "Para cerrar la cena en grande: café de origen Nariño, crema irlandesa Baileys, galletas danesas y dos vasos de doble pared para disfrutar la sobremesa. Presentado en caja de regalo.",
-    contents: ["Café Juan Valdez de origen Nariño", "Baileys Original Irish Cream", "Galletas Royal Dansk 7 oz", "2 vasos de vidrio doble pared"],
+    description: "Para cerrar la cena en grande: café en grano de origen Nariño, crema irlandesa Baileys, galletas danesas y dos vasos de doble pared para disfrutar la sobremesa. Presentado en caja de regalo.",
+    contents: ["Café en grano Juan Valdez de origen Nariño (sin moler)", "Baileys Original Irish Cream", "Galletas Royal Dansk 7 oz", "2 vasos de vidrio doble pared"],
     minQty: 20,
     photo: "assets/img/kits/kit-103-sobremesa.jpg",
   },
@@ -1189,7 +1189,7 @@ const KITS = [
       "Fantasía de Pollo Zenú x 400 g (SKU 4451)",
     ],
     minQty: 100,
-    photo: "assets/img/kits/ancheta-mesa-festiva.webp?v=2",
+    photo: "assets/img/kits/ancheta-mesa-festiva.webp?v=3",
   },
   {
     id: "ancheta-esenciales",
@@ -1209,7 +1209,7 @@ const KITS = [
       "Arequipe Alpina 220 g (SKU 1013)",
     ],
     minQty: 100,
-    photo: "assets/img/kits/ancheta-esenciales.webp?v=2",
+    photo: "assets/img/kits/ancheta-esenciales.webp?v=3",
   },
   {
     id: "ancheta-antojos",
@@ -1229,6 +1229,6 @@ const KITS = [
       "Jugo Néctar de Manzana Alpina 1000 g (SKU 2896)",
     ],
     minQty: 100,
-    photo: "assets/img/kits/ancheta-antojos.webp?v=2",
+    photo: "assets/img/kits/ancheta-antojos.webp?v=3",
   },
 ];

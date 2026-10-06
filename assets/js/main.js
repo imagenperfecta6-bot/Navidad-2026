@@ -545,7 +545,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // nombre que empieza por "Set", en el orden de products.js) y después el
     // resto agrupado por categoría (orden de CATEGORIES), cada una A–Z.
     const isSet = (p) => p.category === "sets" || /^set\b/i.test(p.name);
-    const sets = PRODUCTS.filter(isSet);
+    // Los 4 primeros de la lista, en este orden; el resto de sets sigue el
+    // orden de products.js.
+    const firstIds = ["set-bbq-taroudant", "set-bbq-bacon", "caja-circular-madera", "caja-circular-bambu"];
+    const sets = PRODUCTS.filter(isSet).sort((a, b) => {
+      const ia = firstIds.indexOf(a.id), ib = firstIds.indexOf(b.id);
+      return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+    });
     // Dentro de cada categoría: las "Tabla…" primero y luego A–Z.
     const rank = (p) => (/^tabla\b/i.test(p.name) ? 0 : 1);
     const byName = (a, b) =>
