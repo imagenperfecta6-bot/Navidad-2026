@@ -899,3 +899,7 @@ body.splash-active{ overflow:hidden; }
 /* Las fotos de anchetas son tarjetas cuadradas con título y lista de productos:
    se muestran completas, sin recortar arriba/abajo. */
 #kitsGrid .kit-media{ aspect-ratio:1/1; }
+
+/* Las fotos de kits son cuadradas (producto + caja completos): recuadro cuadrado
+   para que no se recorten café, galletas ni bordes de la caja. */
+#kitsArmadosGrid .kit-media{ aspect-ratio:1/1; }
