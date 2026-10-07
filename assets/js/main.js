@@ -406,6 +406,15 @@ document.addEventListener("DOMContentLoaded", () => {
         media.appendChild(revealNode);
       }
 
+      // Tarjeta solo informativa (p. ej. "Anchetas armadas"): únicamente la
+      // imagen — sin título, código, cantidad mínima, selector ni botón.
+      if (kit.info) {
+        article.classList.add("kit-card-info");
+        node.querySelector(".kit-body").remove();
+        gridEl.appendChild(node);
+        return;
+      }
+
       node.querySelector(".kit-title").textContent = kit.name;
       node.querySelector(".kit-code").textContent = kit.code;
       node.querySelector(".kit-desc").textContent = kit.description;
