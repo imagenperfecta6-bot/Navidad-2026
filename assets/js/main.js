@@ -1,30 +1,25 @@
 /* ==========================================================================
-   CATÁLOGO NAVIDAD / FIN DE AÑO — Imagen Perfecta Sie7e
+   CATÁLOGO NAVIDAD / FIN DE AÑO — Imagen Perfecta 7
    Lógica del sitio (estático, sin build). Datos: assets/js/products.js
    ========================================================================== */
 const CONFIG = {
-  // Correo en copia (cc) de toda solicitud de cotización, además del asesor elegido.
-  quoteEmail: "mercadeo@ip7.com.co",
+  // Correo en copia (cc) de TODA solicitud de cotización (Sneyther Linares).
+  quoteEmail: "Mercadeo@ip7.com.co",
 };
 
-/* >>> PENDIENTE — faltan los correos <<<
-   Lista de asesores para el desplegable "Tu asesor" del formulario de
-   cotización (mismo patrón que el catálogo automotriz): al elegir uno, la
-   solicitud se dirige por correo directo a esa persona (con copia a
-   CONFIG.quoteEmail). Nombres reales ya confirmados por el usuario
-   (2026-09-18); el correo de cada uno todavía no — mientras `email` esté
-   vacío, ese asesor cae al correo general (ver `toEmail` en el submit del
-   formulario) para que el desplegable ya funcione sin romperse. En cuanto
-   el usuario los comparta, solo hay que rellenar cada "email": "" de abajo. */
+/* Asesores del desplegable "Tu asesor" del formulario de cotización: al elegir
+   uno, la solicitud se envía por correo a esa persona. Siempre va en copia
+   `CONFIG.quoteEmail`. `cc` agrega copias extra solo para ese asesor (p. ej.
+   las solicitudes de Margarita también van a Servicio al Cliente). */
 const ADVISORS = [
-  { id: "yanira-silva", name: "Yanira Silva", email: "" },
-  { id: "elizabeth-leon", name: "Elizabeth León", email: "" },
-  { id: "sevastian-veloza", name: "Sevastian Veloza", email: "" },
-  { id: "daniel-alvarez", name: "Daniel Alvarez", email: "" },
-  { id: "margarita-salinas", name: "Margarita Salinas", email: "" },
-  { id: "carlos-salinas", name: "Carlos Salinas", email: "" },
-  { id: "sneyther-linares", name: "Sneyther Linares", email: "" },
-  { id: "servicio-cliente", name: "Servicio al Cliente", email: "" },
+  { id: "yanira-silva", name: "Yanira Silva", email: "ejecutivo.comercial8@ip7.com.co" },
+  { id: "elizabeth-leon", name: "Elizabeth León", email: "ejecutivo.comercial5@ip7.com.co" },
+  { id: "sevastian-veloza", name: "Sevastian Veloza", email: "ejecutivo.comercial3@ip7.com.co" },
+  { id: "daniel-alvarez", name: "Daniel Alvarez", email: "ejecutivo.comercial4@ip7.com.co" },
+  { id: "margarita-salinas", name: "Margarita Salinas", email: "margaritasalinas@ip7.com.co", cc: ["asistente.comercial@ip7.com.co"] },
+  { id: "carlos-salinas", name: "Carlos Salinas", email: "carlosalinas@ip7.com.co" },
+  { id: "sneyther-linares", name: "Sneyther Linares", email: "Mercadeo@ip7.com.co" },
+  { id: "servicio-cliente", name: "Servicio al Cliente", email: "asistente.comercial@ip7.com.co" },
 ];
 
 // Cantidad mínima por defecto si un producto/kit no trae su propio minQty.
@@ -97,6 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function itemById(id) {
     return ALL_ITEMS.find((p) => p.id === id);
   }
+  // Quita de la selección guardada los productos que ya no existen en el
+  // catálogo (si no, el contador cuenta ítems que no se pueden ver ni quitar).
+  Object.keys(cart).forEach((id) => {
+    const it = itemById(id);
+    if (!it || it.info) delete cart[id];
+  });
+  saveCart();
   function minQtyOf(item) {
     return item && item.minQty ? item.minQty : DEFAULT_MIN_QTY;
   }
@@ -575,7 +577,10 @@ document.addEventListener("DOMContentLoaded", () => {
     section.id = "cat-todos";
     section.innerHTML = `<div class="grid"></div>`;
     const grid = section.querySelector(".grid");
-    sets.concat(rest).forEach((p) => grid.appendChild(buildCard(p)));
+    // "Mugs y Café" va de primero, luego los Sets y después el resto.
+    const cafe = rest.filter((p) => p.category === "bebidas");
+    const others = rest.filter((p) => p.category !== "bebidas");
+    cafe.concat(sets, others).forEach((p) => grid.appendChild(buildCard(p)));
     catalogSections.appendChild(section);
     observeCards();
   }
@@ -778,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const precioTxt = p.unitPrice != null
           ? `${formatPrice(p.unitPrice)} c/u — total ${formatPrice(p.unitPrice * p.cantidad)}`
           : "cotización especial";
-        return `• ${p.nombre}${p.kit ? " [para kit]" : ""} (${p.codigo}) —${p.cantidad.toLocaleString("es-CO")} und. — ${precioTxt}`;
+        return `• ${p.nombre}${p.kit ? " [para kit]" : ""} (${p.codigo}) — ${p.cantidad.toLocaleString("es-CO")} und. — ${precioTxt}`;
       })
       .join("\n");
 
@@ -823,6 +828,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return ADVISORS.find((a) => a.id === id);
   }
 
+  // Destinatario = el asesor elegido; copia = CONFIG.quoteEmail (siempre) más
+  // las copias propias del asesor. Sin repetidos (sin importar mayúsculas).
+  function quoteRecipients(advisor) {
+    const to = (advisor && advisor.email) || CONFIG.quoteEmail;
+    const seen = new Set([to.toLowerCase()]);
+    const cc = [];
+    [CONFIG.quoteEmail].concat((advisor && advisor.cc) || []).forEach((m) => {
+      if (m && !seen.has(m.toLowerCase())) { seen.add(m.toLowerCase()); cc.push(m); }
+    });
+    return { to, cc };
+  }
+
   function getFormData() {
     const fd = new FormData(document.getElementById("quoteForm"));
     return {
@@ -850,10 +867,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!validateForm()) return;
     const payload = buildQuotePayload(getFormData());
     // Mientras no tengamos el correo real de ese asesor, cae al correo general.
-    const toEmail = (payload.advisor && payload.advisor.email) || CONFIG.quoteEmail;
+    const { to: toEmail, cc: ccList } = quoteRecipients(payload.advisor);
     const subject = encodeURIComponent("Solicitud de cotización — Catálogo Navidad / Fin de Año");
     const body = encodeURIComponent(payload.mensaje);
-    window.location.href = `mailto:${toEmail}?cc=${CONFIG.quoteEmail}&subject=${subject}&body=${body}`;
+    const ccPart = ccList.length ? `cc=${ccList.join(",")}&` : "";
+    window.location.href = `mailto:${toEmail}?${ccPart}subject=${subject}&body=${body}`;
     showToast(`Abriendo tu cliente de correo para enviar la solicitud a ${payload.advisor ? payload.advisor.name : "tu asesor"}…`);
   });
 

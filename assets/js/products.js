@@ -34,8 +34,8 @@
    ========================================================================== */
 
 const CATEGORIES = [
-  { slug: "sets",        label: "Sets" },
   { slug: "bebidas",     label: "Mugs y Café" },
+  { slug: "sets",        label: "Sets" },
   { slug: "tecnologia",  label: "Tecnología" },
   { slug: "morrales",    label: "Morrales y Bolsos" },
   { slug: "bolsas",      label: "Empaques" },
@@ -981,6 +981,58 @@ const PRODUCTS = [
     images: ["assets/img/productos/mug-metalico-harlem.jpg"],
   },
 
+  // ---------------- CAFETERAS Y NEVERAS (códigos provisionales CAF-/NEV-) ----------------
+  {
+    id: "prensa-francesa-bialetti-smart",
+    name: "Prensa Francesa Smart Bialetti 350 ml",
+    code: "CAF-01",
+    category: "bebidas",
+    description: "Prensa francesa Smart de Bialetti con capacidad de 350 ml, en color rojo. Vaso de vidrio protegido por una estructura de plástico con asa ergonómica, para preparar café de filtro con todo su aroma.",
+    features: ["350 ml", "Color rojo", "Vaso de vidrio"],
+    minQty: 10,
+    images: ["assets/img/productos/prensa-francesa-bialetti-smart.jpg"],
+  },
+  {
+    id: "french-press-primula",
+    name: "French Press Primula 2 Tazas",
+    code: "CAF-02",
+    category: "bebidas",
+    description: "French press Primula para 2 tazas, con capacidad de 0,35 litros y 16,4 cm de alto. Vaso de vidrio con base y asa en plástico negro, ideal para preparar café en casa o en la oficina.",
+    features: ["2 tazas · 0,35 L", "16,4 cm de alto", "Color negro"],
+    minQty: 10,
+    images: ["assets/img/productos/french-press-primula.jpg"],
+  },
+  {
+    id: "cafetera-primula-espresso",
+    name: "Cafetera Primula Espresso 3 Tazas",
+    code: "CAF-03",
+    category: "bebidas",
+    description: "Cafetera italiana (moka) Primula Espresso para 3 tazas, en aluminio pulido con asa y perilla negras. Prepara un café intenso y aromático en pocos minutos.",
+    features: ["3 tazas", "Aluminio pulido", "Estilo italiano"],
+    minQty: 10,
+    images: ["assets/img/productos/cafetera-primula-espresso.jpg"],
+  },
+  {
+    id: "nevera-portatil-5-7l",
+    name: "Nevera Portátil 5,7 L",
+    code: "NEV-01",
+    category: "hogar",
+    description: "Nevera portátil de 5,7 litros con tapa y asa abatible, perfecta para planes al aire libre, picnics y loncheras grandes. Disponible en gris, azul y rojo.",
+    features: ["5,7 litros", "Con asa abatible", "Colores: gris, azul y rojo"],
+    minQty: 10,
+    images: ["assets/img/productos/nevera-portatil-5-7l.jpg"],
+  },
+  {
+    id: "nevera-portatil-11-4l",
+    name: "Nevera Portátil 11,4 L",
+    code: "NEV-02",
+    category: "hogar",
+    description: "Nevera portátil de 11,4 litros con tapa y asa abatible, con más espacio para bebidas y alimentos en tus planes al aire libre y reuniones. Disponible en naranja y azul.",
+    features: ["11,4 litros", "Con asa abatible", "Colores: naranja y azul"],
+    minQty: 10,
+    images: ["assets/img/productos/nevera-portatil-11-4l.jpg"],
+  },
+
   // ---------------- COMESTIBLES (Café Quindío) ----------------
   // Códigos COM-NN provisionales (el usuario no dio REF). Mantener tal cual el
   // estado "en grano" / "molido" de cada café: sale de la etiqueta del empaque.
@@ -1151,11 +1203,11 @@ const PRODUCTS = [
   },
   {
     id: "tarjeta-08",
-    name: "Tarjeta 08 · Feliz Cumpleaños",
+    name: "Tarjeta 08 · Momento Feliz",
     code: "TARJ-08",
     category: "tarjetas",
-    description: "Tarjeta alargada de cumpleaños con globos y mensaje personalizado, para sorprender a tu equipo o a tus clientes en su día. Medidas: 13 cm de ancho x 6 cm de alto.",
-    features: ["13 x 6 cm", "Diseño de cumpleaños", "Con tu logo"],
+    description: "Tarjeta alargada con globos y mensaje personalizado, para celebrar un momento especial con tu equipo o tus clientes. Medidas: 13 cm de ancho x 6 cm de alto.",
+    features: ["13 x 6 cm", "Diseño con globos", "Con tu logo"],
     minQty: 10,
     images: ["assets/img/productos/tarjeta-08.jpg"],
   },
