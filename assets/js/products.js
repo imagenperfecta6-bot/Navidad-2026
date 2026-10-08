@@ -1139,7 +1139,7 @@ const PRODUCTS = [
     description: "Tarjeta vertical impresa a todo color con un mensaje de bienestar y espacio para el logo de tu marca. Un detalle para acompañar el regalo. Medidas: 10 cm de ancho x 15 cm de alto.",
     features: ["10 x 15 cm", "Vertical", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-01.jpg"],
+    images: ["assets/img/productos/tarjeta-01.jpg?v=2"],
   },
   {
     id: "tarjeta-02",
@@ -1149,7 +1149,7 @@ const PRODUCTS = [
     description: "Tarjeta con un pin de regalo incluido: un detalle para acompañar un mensaje de agradecimiento o de apoyo a una causa. Impresión a todo color personalizable con tu logo. Medidas: 14 cm de ancho x 10 cm de alto.",
     features: ["14 x 10 cm", "Incluye pin", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-02.jpg"],
+    images: ["assets/img/productos/tarjeta-02.jpg?v=2"],
   },
   {
     id: "tarjeta-03",
@@ -1159,7 +1159,7 @@ const PRODUCTS = [
     description: "Tarjeta para acompañar cada caja de regalo: detalla el contenido y cuenta una pequeña historia del momento que se va a vivir. Impresión a todo color personalizable. Medidas: 15 cm de ancho x 10 cm de alto.",
     features: ["15 x 10 cm", "Detalla el contenido", "Impresión a todo color"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-03.jpg"],
+    images: ["assets/img/productos/tarjeta-03.jpg?v=2"],
   },
   {
     id: "tarjeta-04",
@@ -1169,7 +1169,7 @@ const PRODUCTS = [
     description: "Tarjeta de agradecimiento con diseño y mensaje a tu medida, ideal para agradecer a tus clientes y aliados en cualquier momento del año. Se personaliza con el logo de tu marca. Medidas: 13 cm de ancho x 8 cm de alto.",
     features: ["13 x 8 cm", "Mensaje de agradecimiento", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-04.jpg"],
+    images: ["assets/img/productos/tarjeta-04.jpg?v=2"],
   },
   {
     id: "tarjeta-05",
@@ -1179,7 +1179,7 @@ const PRODUCTS = [
     description: "Tarjeta vertical con diseño de árbol y regalos, con espacio para tu mensaje de buenos deseos. Personalizable con tu logo y tu texto. Medidas: 7 cm de ancho x 10 cm de alto.",
     features: ["7 x 10 cm", "Diseño de árbol y regalos", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-05.jpg"],
+    images: ["assets/img/productos/tarjeta-05.jpg?v=2"],
   },
   {
     id: "tarjeta-06",
@@ -1189,7 +1189,7 @@ const PRODUCTS = [
     description: "Tarjeta grande con espacio para un mensaje largo de agradecimiento y buenos deseos para el nuevo año. Diseño personalizable con tu logo. Medidas: 18 cm de ancho x 13 cm de alto.",
     features: ["18 x 13 cm", "Mensaje extenso", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-06.jpg"],
+    images: ["assets/img/productos/tarjeta-06.jpg?v=2"],
   },
   {
     id: "tarjeta-07",
@@ -1199,7 +1199,7 @@ const PRODUCTS = [
     description: "Tarjeta de felicitación con fondo de esferas y copos de nieve, perfecta para celebrar cualquier ocasión especial. Personalizable con tu logo y tu mensaje. Medidas: 10 cm de ancho x 8 cm de alto.",
     features: ["10 x 8 cm", "Diseño de celebración", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-07.jpg"],
+    images: ["assets/img/productos/tarjeta-07.jpg?v=2"],
   },
   {
     id: "tarjeta-08",
@@ -1209,7 +1209,7 @@ const PRODUCTS = [
     description: "Tarjeta alargada con globos y mensaje personalizado, para celebrar un momento especial con tu equipo o tus clientes. Medidas: 13 cm de ancho x 6 cm de alto.",
     features: ["13 x 6 cm", "Diseño con globos", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-08.jpg"],
+    images: ["assets/img/productos/tarjeta-08.jpg?v=2"],
   },
   {
     id: "tarjeta-09",
@@ -1219,7 +1219,30 @@ const PRODUCTS = [
     description: "Tarjeta con ramas de pino y detalles dorados y rojos, con espacio para tu mensaje y el logo de tu marca. Medidas: 10 cm de ancho x 6,5 cm de alto.",
     features: ["10 x 6,5 cm", "Ramas y lazos", "Con tu logo"],
     minQty: 10,
-    images: ["assets/img/productos/tarjeta-09.jpg"],
+    images: ["assets/img/productos/tarjeta-09.jpg?v=2"],
+  },
+
+  // ---------------- COMPLEMENTOS DE EMPAQUE (categoría Empaques, slug "bolsas") ----------------
+  // Códigos EMP-NN provisionales (el usuario no dio REF).
+  {
+    id: "mono-regalo-rojo",
+    name: "Moño de Regalo Rojo",
+    code: "EMP-01",
+    category: "bolsas",
+    description: "Moño decorativo en cinta satinada roja para adornar el kit, la caja o la ancheta y darle una presentación de regalo más especial.",
+    features: ["Cinta satinada roja", "Decorativo", "Para kits y cajas"],
+    minQty: 10,
+    images: ["assets/img/productos/mono-regalo-rojo.jpg"],
+  },
+  {
+    id: "papel-regalo-interno",
+    name: "Papel de Regalo Interno",
+    code: "EMP-02",
+    category: "bolsas",
+    description: "Papel de seda blanco con confeti de colores para forrar el interior de la caja y acomodar los productos del kit con una presentación cuidada.",
+    features: ["Papel de seda", "Con confeti de colores", "Para el interior de la caja"],
+    minQty: 10,
+    images: ["assets/img/productos/papel-regalo-interno.jpg"],
   },
 
   // ---------------- CAJAS (categoría Empaques, slug "bolsas") ----------------
@@ -1321,9 +1344,9 @@ const KITS_ARMADOS = [
     name: "Kit Entre Sabores",
     code: "KIT-107",
     description: "El clásico para brindar: vino tinto Carmenere, queso holandés, chocolates Ferrero Rocher y una copa de cristal, acomodados sobre papel de regalo interno. Presentado en caja de regalo.",
-    contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "Chocolates Ferrero Rocher", "Copa de vino", "Papel de regalo interno"],
+    contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "Chocolates Ferrero Rocher", "Copa de vino", "Papel de regalo interno blanco con confeti"],
     minQty: 20,
-    photo: "assets/img/kits/kit-107.jpg?v=2",
+    photo: "assets/img/kits/kit-107.jpg?v=3",
   },
   {
     id: "kit-ritual-cafe",
