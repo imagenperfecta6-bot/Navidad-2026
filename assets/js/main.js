@@ -580,7 +580,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // "Mugs y Café" va de primero, luego los Sets y después el resto.
     const cafe = rest.filter((p) => p.category === "bebidas");
     const others = rest.filter((p) => p.category !== "bebidas");
-    cafe.concat(sets, others).forEach((p) => grid.appendChild(buildCard(p)));
+    // Destacados: van de primeros del catálogo, antes que todo lo demás.
+    const pinnedIds = ["licuadora-blast"];
+    const pinned = PRODUCTS.filter((p) => pinnedIds.includes(p.id));
+    pinned.concat(
+      cafe.filter((p) => !pinnedIds.includes(p.id)),
+      sets.filter((p) => !pinnedIds.includes(p.id)),
+      others.filter((p) => !pinnedIds.includes(p.id))
+    ).forEach((p) => grid.appendChild(buildCard(p)));
     catalogSections.appendChild(section);
     observeCards();
   }
