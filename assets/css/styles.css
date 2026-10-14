@@ -903,3 +903,6 @@ body.splash-active{ overflow:hidden; }
 /* Las fotos de kits son cuadradas (producto + caja completos): recuadro cuadrado
    para que no se recorten café, galletas ni bordes de la caja. */
 #kitsArmadosGrid .kit-media{ aspect-ratio:1/1; }
+
+/* Videos verticales de los kits (9:16): se ven completos, con barras negras a los lados */
+.kit-media video.kit-photo{ object-fit:contain; }

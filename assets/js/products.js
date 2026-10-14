@@ -1486,6 +1486,7 @@ const KITS_ARMADOS = [
     contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "Chocolates Ferrero Rocher", "Copa de vino", "Papel de regalo interno blanco con confeti"],
     minQty: 20,
     photo: "assets/img/kits/kit-107.jpg?v=3",
+    video: "assets/img/kits/kit-107.mp4?v=1",
   },
   {
     id: "kit-ritual-cafe",
@@ -1495,6 +1496,7 @@ const KITS_ARMADOS = [
     contents: ["Molino de café eléctrico", "Café Quindío en grano 250 g — Cosecha Especial", "2 vasos de vidrio para café"],
     minQty: 10,
     photo: "assets/img/kits/kit-101-ritual-cafe.jpg",
+    video: "assets/img/kits/kit-101.mp4?v=1",
   },
   {
     id: "kit-sobremesa",
@@ -1504,6 +1506,7 @@ const KITS_ARMADOS = [
     contents: ["Café molido Juan Valdez de origen Nariño 250 g", "Baileys Original Irish Cream", "Galletas Royal Dansk 7 oz", "2 vasos de vidrio doble pared"],
     minQty: 20,
     photo: "assets/img/kits/kit-103-sobremesa.jpg?v=2",
+    video: "assets/img/kits/kit-103.mp4?v=1",
   },
   {
     id: "kit-picoteo",
@@ -1513,6 +1516,7 @@ const KITS_ARMADOS = [
     contents: ["Queso Holandés Alpina 250 g", "Papas Pringles BBQ 71 g", "Baileys Original Irish Cream", "Chocolates Ferrero Rocher 50 g", "Galletas Royal Dansk 7 oz"],
     minQty: 20,
     photo: "assets/img/kits/kit-104-picoteo.jpg?v=2",
+    video: "assets/img/kits/kit-104.mp4?v=1",
   },
   {
     id: "kit-cervecero",
@@ -1522,6 +1526,7 @@ const KITS_ARMADOS = [
     contents: ["2 cervezas Corona Extra", "Mix Cacao y Pretzels Manitoba 130 g", "Papas Pringles BBQ 71 g", "Copa de vidrio"],
     minQty: 20,
     photo: "assets/img/kits/kit-105-cervecero.jpg",
+    video: "assets/img/kits/kit-105.mp4?v=1",
   },
   {
     id: "kit-cafe-express",
@@ -1531,6 +1536,7 @@ const KITS_ARMADOS = [
     contents: ["Cafetera italiana (moka) de 6 tazas", "2 tazas de vidrio", "Café Quindío Génova 340 g"],
     minQty: 10,
     photo: "assets/img/kits/kit-106.jpg?v=3",
+    video: "assets/img/kits/kit-106.mp4?v=1",
   },
   {
     id: "kit-picnic-gourmet",
@@ -1540,6 +1546,7 @@ const KITS_ARMADOS = [
     contents: ["Canasta de picnic con 2 copas y platos", "Vino tinto Viña Maipo Carmenere", "Galletas Royal Dansk 200 g", "Mix Cacao y Pretzels Manitoba", "Papas Pringles BBQ 71 g"],
     minQty: 10,
     photo: "assets/img/kits/kit-108.jpg?v=3",
+    video: "assets/img/kits/kit-108.mp4?v=1",
   },
   {
     id: "kit-vino-para-dos",
@@ -1549,6 +1556,7 @@ const KITS_ARMADOS = [
     contents: ["Vino tinto Viña Maipo Carmenere", "Queso Holandés Alpina 250 g", "2 copas de vino", "Tabla de bambú"],
     minQty: 20,
     photo: "assets/img/kits/kit-109.jpg",
+    video: "assets/img/kits/kit-109.mp4?v=1",
   },
   {
     id: "kit-nevera-navidena",
@@ -1558,6 +1566,7 @@ const KITS_ARMADOS = [
     contents: ["Nevera portátil de 11,4 litros", "6 cervezas Corona en lata", "Papas Pringles Original 124 g", "Mix Cacao Manitoba", "Jarra cervecera de vidrio"],
     minQty: 20,
     photo: "assets/img/kits/kit-110.jpg?v=2",
+    video: "assets/img/kits/kit-110.mp4?v=1",
   },
 ];
 
